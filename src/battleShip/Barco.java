@@ -3,13 +3,13 @@ package battleShip;
 public class Barco {
 	private int longitud, impactosRecibidos;
 	private String nombre;
-	private String[][] coordenadas;
+	private int[][] coordenadas;
 	
 	//constructor
 	public Barco(int longitud, String nombre) {
 		this.longitud = longitud;
 		this.nombre = nombre;
-		this.coordenadas = new String[2][longitud];
+		this.coordenadas = new int[2][longitud];
 		this.impactosRecibidos = 0;
 	}
 
@@ -25,12 +25,12 @@ public class Barco {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String[][] getCoordenadas() {
+	public int[][] getCoordenadas() {
 		return coordenadas;
 	}
-	public void setCoordenadas(String cordX, String cordY, int i) {
-		this.coordenadas[0][i] = cordX; // ejeX
-		this.coordenadas[1][i] = cordY; // ejeY
+	public void setCoordenadas(int cordX, int cordY, int i) {
+		this.coordenadas[0][i] = cordX; // columna
+		this.coordenadas[1][i] = cordY; // fila
 	}	
 	public int getImpactosRecibidos() {
 		return impactosRecibidos;
@@ -42,12 +42,16 @@ public class Barco {
 	public void mostrarCordenadas() {
 		for (int i = 0; i < this.getLongitud(); ++i) {
 			System.out.println(this.coordenadas[0][i]
-					+ " " + this.coordenadas[1][i]);
+					+ "-" + this.coordenadas[1][i]);
 		}
+		System.out.println("_____");
 	}
 	
 	public boolean seMurio() {
-		System.out.println("Impactos: "+this.impactosRecibidos +" Largo: "+ this.longitud);
+/*
+		System.out.println("Impactos: " + this.impactosRecibidos
+				+ " Largo: " + this.longitud);
+*/
 		if ( this.impactosRecibidos == this.longitud ) {
 			return true;
 		}

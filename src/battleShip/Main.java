@@ -1,10 +1,7 @@
 package battleShip;
 
-import java.util.Scanner;
-
 public class Main {
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
 		do {
 			int opcion = Menu.menu();
 			switch ( opcion ) {
@@ -17,12 +14,10 @@ public class Main {
 				break;
 			case 3:
 				System.out.printf("Finalizado");
-				scan.close();
 				return;
 			default:
 				System.out.printf("Inválido");
 			}
-			scan.nextLine();
 		} while( true );
 	}
 

@@ -22,17 +22,17 @@ public class Menu {
 						+"----------------------------"
 						+"\n");
 				
-				opcion = Integer.parseInt(sc.nextLine());			
-				if (opcion == 1 || opcion == 2) {
-					
+				opcion = Integer.parseInt(sc.nextLine().trim());			
+				if (opcion == 1 || opcion == 2 ) {
+//					sc.close();
 					return opcion;
 				}
 			} catch (Exception e) {
-				System.out.println("Opción inválida, no sea pao");
+				System.out.println("Opción inválida.");
 			}
 		} while( opcion != 3 );
 		System.out.println("Bye-bye Marinero");
-		
+//		sc.close();
 		return 3;
 	}
 	
